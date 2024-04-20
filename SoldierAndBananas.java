@@ -11,9 +11,17 @@ public class SoldierAndBananas
         int total = 0;
         for (int i = 1; i <= num; i++)
         {
-            total += (cost * k);
+            total = total + cost * k;
             k++;
         }
-        System.out.println(total - init);
+
+        if(total <= init)
+        {
+            System.out.println(0);
+        }
+        else
+        {
+            System.out.println(total - init);
+        }
     }
 }
