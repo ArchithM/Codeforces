@@ -5,31 +5,17 @@ public class YogurtSale
     {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-        int[][] yogurt = new int[t + 1][3];
-        int b = 0;
-        for (int i = 0; 0 < t; i++)
+        int[][] yog = new int[t][3];
+        for (int i = 0; i < t; i++)
         {
             for (int c = 0; c < 3; c++)
             {
-                yogurt[i][c] = sc.nextInt();
+                yog[i][c] = sc.nextInt();
             }
-            if ((yogurt[i][1] * 2) <= yogurt[i][2])
-            {
-                System.out.println(yogurt[i][1] * yogurt[i][0]);
-            }
-            else
-            {
-                while (yogurt[i][0] >= 2)
-                {
-                    b += yogurt[i][2];
-                    yogurt[i][0] -= 2;
-                }
-                while (yogurt[i][0] > 0)
-                {
-                    b += yogurt[i][1];
-                    yogurt[i][0] -= 1;
-                }
-                System.out.println(b);
+            if (yog[i][0] % 2 == 0) {
+                System.out.println(Math.min(yog[i][0] * yog[i][1], yog[i][0] / 2 * yog[i][2]));
+            } else {
+                System.out.println(Math.min(yog[i][0] * yog[i][1], (yog[i][0] - 1) / 2 * yog[i][2] + yog[i][1]));
             }
         }
     }
