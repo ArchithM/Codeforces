@@ -6,16 +6,17 @@ public class StonesOnTheTable
     {
         Scanner keyboard = new Scanner(System.in);
         int n = keyboard.nextInt();
-        String s = keyboard.nextLine();
+        String s = keyboard.next();
 
         int count = 0;
-        for (int i = 0; i < s.length() - 1; i++)
+        for (int i = 0; i < n - 1; i++)
         {
-            if (s.charAt(i) == s.charAt(i + 1));
+            if (s.charAt(i) == s.charAt(i + 1))
             {
                 count++;
             }
         }
         System.out.println(count);
     }
+
 }
