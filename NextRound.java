@@ -1,30 +1,27 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-public class NextRound
-{
-    public static void main(String[] args)
-    {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int k = scanner.nextInt();
-        int count = 0;
-        int place = -1;
-        for (int i = 0; i < n; i++)
-        {
-            int a = scanner.nextInt();
-            if (a > 0)
-            {
-                if (i == (k - 1))
-                {
-                    count += k;
-                    place = a;
-                }
-                else if (a == place)
-                {
-                    count++;
-                }
-            }
+public class NextRound {
+
+    public static void main(String args[]) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] data = new int[n + 1];
+        int minScore = 0;
+        for (int i = 1; i <= n; i++) {
+            int score = sc.nextInt();
+            data[i] = score;
+            if (i == k)
+                minScore = score;
         }
-        System.out.println(count);
+
+        int cnt = 0;
+        for (int i = 1; i <= n; i++) {
+            if (data[i] >= minScore && data[i] > 0)
+                cnt++;
+        }
+
+        System.out.println(cnt);
     }
 }
