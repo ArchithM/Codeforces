@@ -8,15 +8,16 @@ public class CanISquare
         int t = sc.nextInt();
         for (int i = 0; i < t; i++)
         {
-            int n = sc.nextInt();
-            int sum = 0;
+            long n = sc.nextLong();
+            long sum = 0;
             for (int c = 0; c < n; c++)
             {
-                int a = sc.nextInt();
+                long a = sc.nextLong();
                 sum += a;
             }
-            int x = (int) Math.sqrt(sum);
-            if(Math.pow(x,2) == sum)
+            long x;
+            x = (long) Math.sqrt(sum);
+            if(x * x == sum)
             {
                 System.out.println("YES");
             }
